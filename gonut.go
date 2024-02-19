@@ -36,6 +36,7 @@ const DELTAP = 0.02
 const RENCH = ".,-~:;=!*#$@"
 
 // FPS
+// -1 for uncapped
 const FPS = 144
 
 func renderFrame(angleA float64, angleB float64) [HEIGHT][WIDTH]rune {
@@ -100,8 +101,8 @@ func printFrame(frame [HEIGHT][WIDTH]rune) {
 }
 
 func main() {
-	A := 0.0
-	B := math.Pi / 2
+	A := float64(0)
+	B := float64(0)
 
 	// Not sure why, but the control character approach doesn't work for me, had to resort to a third party import
 	screen.Clear()
